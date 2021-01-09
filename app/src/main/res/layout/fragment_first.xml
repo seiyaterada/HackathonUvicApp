@@ -60,7 +60,9 @@
         android:text="Need help?"
         android:textColor="@color/uvic_blue"
         android:textSize="10sp"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="570dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
