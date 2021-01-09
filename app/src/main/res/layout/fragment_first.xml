@@ -51,4 +51,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/button3"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="122dp"
+        android:layout_height="40dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Need help?"
+        android:textColor="@color/uvic_blue"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="570dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
