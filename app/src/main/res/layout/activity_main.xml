@@ -40,7 +40,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="101dp"
-        android:text="WOW" />
+        android:text="Sign in" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
