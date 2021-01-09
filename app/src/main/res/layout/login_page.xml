@@ -62,7 +62,17 @@
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log In" />
+        android:rotation="0"
+        android:rotationX="0"
+        android:rotationY="0"
+        android:text="Login"
+        android:translationY="10" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/uvic_logo" />
 
 
 </LinearLayout>
