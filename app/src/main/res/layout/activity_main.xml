@@ -26,7 +26,7 @@
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/uvic_logo" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
