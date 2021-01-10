@@ -9,7 +9,7 @@
         android:id="@+id/FirstFragment"
         android:name="com.example.hackathonuvicapp.LoginActivity"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/Cover_page">
+        tools:layout="@layout/coverpage">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.hackathonuvicapp.SecondFragment"
+        android:name="com.example.hackathonuvicapp.MondayActivity"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/schedule">
+        tools:layout="@layout/monday">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
