@@ -1,4 +1,4 @@
-package directionhelpers;
+package com.example.hackathonuvicapp.directionhelpers;
 
 import android.content.Context;
 import android.os.AsyncTask;

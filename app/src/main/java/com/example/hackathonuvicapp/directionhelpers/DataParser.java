@@ -1,4 +1,4 @@
-package directionhelpers;
+package com.example.hackathonuvicapp.directionhelpers;
 
 import com.google.android.gms.maps.model.LatLng;
 
