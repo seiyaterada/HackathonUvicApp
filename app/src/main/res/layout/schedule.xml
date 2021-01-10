@@ -21,38 +21,44 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button_schedulefall"
+        android:id="@+id/btnFall"
         android:layout_width="399dp"
         android:layout_height="70dp"
         android:layout_marginTop="96dp"
+        android:background="@color/uvic_blue"
         android:text="Fall 2020"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_schedulespring"
+        android:id="@+id/btnSpring"
         android:layout_width="399dp"
         android:layout_height="70dp"
+        android:background="@color/uvic_blue"
         android:text="Spring 2021"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_schedulefall" />
+        app:layout_constraintTop_toBottomOf="@+id/btnFall" />
 
     <Button
-        android:id="@+id/button_schedulesummer"
+        android:id="@+id/btnSummer"
         android:layout_width="399dp"
         android:layout_height="70dp"
+        android:background="@color/uvic_blue"
         android:text="Summer 2021"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_schedulespring" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSpring" />
 
     <EditText
-        android:id="@+id/schedule_header"
+        android:id="@+id/textTitleSchedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
