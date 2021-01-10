@@ -52,11 +52,14 @@
         android:id="@+id/btnNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="36dp"
+
         android:backgroundTint="@color/uvic_blue"
         android:text="Add Courses  +"
         android:textColor="#FFFFFFFF"
-
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="105dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitleSchedule" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
