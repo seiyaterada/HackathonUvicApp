@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.coverpage);
 
         configureLoginButton();
+        configureSignupButton();
     }
 
     private void configureLoginButton(){
@@ -24,6 +25,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+
+        });
+    }
+    private void configureSignupButton(){
+        Button loginPageButton = (Button) findViewById(R.id.btnGoToSignup);
+        loginPageButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SignupActivity.class));
             }
 
         });

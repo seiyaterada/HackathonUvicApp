@@ -36,7 +36,6 @@
         android:id="@+id/txtHome"
         android:layout_width="391dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="79dp"
         android:gravity="center"
         android:paddingTop="20dp"
         android:paddingBottom="30dp"
@@ -46,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/blackLine" />
 
     <Button
         android:id="@+id/btnSchedule"
