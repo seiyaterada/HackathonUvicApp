@@ -29,11 +29,13 @@
         </activity>
         <activity android:name=".ExploreMapActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".MondayActivity" />
-        <activity android:name=".TuesdayActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".LoginActivity" />
-
+        <activity android:name=".MondayActivity" />
+        <activity android:name=".TuesdayActivity" />
+        <activity android:name=".WednesdayActivity" />
+        <activity android:name=".ThursdayActivity" />
+        <activity android:name=".FridayActivity" />
     </application>
 
 </manifest>

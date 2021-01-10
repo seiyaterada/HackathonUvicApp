@@ -34,7 +34,7 @@ public class TuesdayActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(TuesdayActivity.this, MondayActivity.class));
+                startActivity(new Intent(TuesdayActivity.this, WednesdayActivity.class));
             }
 
         });
