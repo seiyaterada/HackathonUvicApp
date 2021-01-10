@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "649746705392",
+    "project_id": "hackathonuvicapp",
+    "storage_bucket": "hackathonuvicapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649746705392:android:9c00164830498f252ecb35",
+        "android_client_info": {
+          "package_name": "com.example.hackathonuvicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649746705392-h113o7hal0fmiqds7vvqb820l44m3e47.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnMMUtiFAr8WZJ99MG9Y5Kr12Q69KARgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "649746705392-h113o7hal0fmiqds7vvqb820l44m3e47.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
