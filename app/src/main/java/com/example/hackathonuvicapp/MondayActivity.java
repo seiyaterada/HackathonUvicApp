@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
             ConfigurePrev();
             ConfigureNext();
-            addClass();
+            //addClass();
         }
 
         private void ConfigurePrev(){
@@ -45,18 +45,6 @@ import androidx.appcompat.app.AppCompatActivity;
             });
         }
 
-
-        @SuppressLint("WrongViewCast")
-        private void addClass() {
-            ImageButton addClassButton;
-            addClassButton = (ImageButton) findViewById(R.id.btnNew);
-            addClassButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(MondayActivity.this, MondayActivityOneCourse.class));
-                }
-            });
-        }
 
 //          alertdialog beginning
 //        private void addClass() {

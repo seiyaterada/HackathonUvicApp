@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, MondayActivity.class));
+                startActivity(new Intent(HomeActivity.this, ExploreMapActivity.class));
             }
         });
     }
