@@ -19,7 +19,8 @@
         android:layout_height="wrap_content"
         android:text="Get Direction"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="611dp" />
+        tools:layout_editor_absoluteX="-48dp"
+        tools:layout_editor_absoluteY="0dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

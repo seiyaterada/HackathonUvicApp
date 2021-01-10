@@ -44,7 +44,8 @@ public class ExploreMapActivity extends FragmentActivity implements OnMapReadyCa
         btnGetDirection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new FetchURL(ExploreMapActivity.this).execute(getUrl(begin.getPosition(), end.getPosition(), "walking"), "walking");
+                String url = getUrl(begin.getPosition(), end.getPosition(), "walking");
+                new FetchURL(ExploreMapActivity.this).execute(url, "walking");
             }
         });
         begin = new MarkerOptions().position(new LatLng(48.463435689901374, -123.30971879296496)).title("Start");
@@ -52,10 +53,6 @@ public class ExploreMapActivity extends FragmentActivity implements OnMapReadyCa
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-        String url = getUrl(begin.getPosition(), end.getPosition(), "walking");
-        new FetchURL(ExploreMapActivity.this).execute(url, "walking");
-
     }
 
     @Override
