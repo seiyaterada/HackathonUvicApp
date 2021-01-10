@@ -3,24 +3,46 @@ package com.example.hackathonuvicapp;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-    public class MondayActivity extends AppCompatActivity {
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-        String m_Text;
+import java.util.HashMap;
+import java.util.Map;
+
+import static java.security.AccessController.getContext;
+
+public class MondayActivity extends AppCompatActivity {
+
+        String mCourse, mBuilding, mTime, userID;
+        FirebaseAuth fAuth;
+        FirebaseFirestore fStore;
+        DocumentReference documentReference1;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.monday);
+
+            fAuth = FirebaseAuth.getInstance();
+            fStore = FirebaseFirestore.getInstance();
 
             ConfigurePrev();
             ConfigureNext();
@@ -50,7 +72,7 @@ import androidx.appcompat.app.AppCompatActivity;
         }
 
 
-        //          alertdialog beginning
+        //alertdialog beginning
         private void addClass() {
             Button addClassButton = findViewById(R.id.btnNew);
             addClassButton.setOnClickListener(new View.OnClickListener() {
@@ -58,21 +80,40 @@ import androidx.appcompat.app.AppCompatActivity;
                 public void onClick(View view) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MondayActivity.this);
                     builder.setTitle("Add Course");
-
+                    View viewInflated = LayoutInflater.from(MondayActivity.this).inflate(R.layout.dialogitems, (ViewGroup) findViewById(android.R.id.content), false);
                     // Set up the input
-                    final EditText input = new EditText(MondayActivity.this);
-                    // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
-                    input.setInputType(InputType.TYPE_CLASS_TEXT);
-                    builder.setView(input);
+                    final EditText courseInput = viewInflated.findViewById(R.id.textCourse);
+                    final EditText buildingInput = viewInflated.findViewById(R.id.textBuilding);
+                    // Specify the type of input expected
+                    builder.setView(viewInflated);
 
                     // Set up the buttons
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            m_Text = input.getText().toString();
+                            mCourse = courseInput.getText().toString();
+                            mBuilding = buildingInput.getText().toString();
+                            userID = fAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = fStore.collection("users").document(userID);
+                            DocumentReference documentReference1 = fStore.collection("/users/"+userID+"/courses").document(mCourse);
+                            Map<String, Object> courses = new HashMap<>();
+                            courses.put("cName", mCourse);
+                            courses.put("bName", mBuilding);
+                            documentReference1.set(courses).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("TAG", "onSuccess: DB created for" + userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("TAG", "onFailure: "+ e.toString());
+                                }
+                            });
+                            dialog.dismiss();
                         }
                     });
-                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.cancel();
