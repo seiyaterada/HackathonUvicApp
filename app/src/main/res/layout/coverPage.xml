@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/button_explore_map"
+        android:id="@+id/btnExploreMap"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="270dp"
         android:layout_height="65dp"
@@ -27,7 +27,7 @@
         app:strokeColor="@color/uvic_blue" />
 
     <Button
-        android:id="@+id/button_sign_in"
+        android:id="@+id/btnSignIn"
         android:layout_width="270dp"
         android:layout_height="65dp"
         android:layout_marginTop="11dp"
@@ -38,10 +38,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_explore_map" />
+        app:layout_constraintTop_toBottomOf="@+id/btnExploreMap" />
 
     <ImageView
-        android:id="@+id/uvic_logo"
+        android:id="@+id/uvicLogo"
         android:layout_width="413dp"
         android:layout_height="187dp"
         android:layout_marginTop="5dp"
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_help"
+        android:id="@+id/btnHelp"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="122dp"
         android:layout_height="40dp"
