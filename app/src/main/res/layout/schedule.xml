@@ -25,6 +25,8 @@
         android:layout_width="399dp"
         android:layout_height="70dp"
         android:layout_marginTop="96dp"
+        android:backgroundTint="@color/uvic_blue"
+        android:textColor="@color/white"
         android:text="Fall 2020"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -35,6 +37,8 @@
         android:id="@+id/button_schedulespring"
         android:layout_width="399dp"
         android:layout_height="70dp"
+        android:backgroundTint="@color/uvic_blue"
+        android:textColor="@color/white"
         android:text="Spring 2021"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -46,6 +50,8 @@
         android:layout_width="399dp"
         android:layout_height="70dp"
         android:text="Summer 2021"
+        android:backgroundTint="@color/uvic_blue"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +76,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
