@@ -1,5 +1,6 @@
 package com.example.hackathonuvicapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
             ConfigurePrev();
             ConfigureNext();
+            addClass();
         }
 
         private void ConfigurePrev(){
@@ -37,6 +39,19 @@ import androidx.appcompat.app.AppCompatActivity;
                     startActivity(new Intent(MondayActivity.this, TuesdayActivity.class));
                 }
 
+            });
+        }
+
+
+        @SuppressLint("WrongViewCast")
+        private void addClass() {
+            ImageButton addClassButton;
+            addClassButton = (ImageButton) findViewById(R.id.btnNew);
+            addClassButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(MondayActivity.this, MondayActivityOneCourse.class));
+                }
             });
         }
 }
