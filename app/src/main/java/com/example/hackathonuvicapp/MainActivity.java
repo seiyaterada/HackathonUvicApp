@@ -29,24 +29,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-
-
-    // Google sign in stuff below
-
-//    private void signIn() {
-//        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-//        startActivityForResult(signInIntent, RC_SIGN_IN);
-//    }
-//
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.sign_in_button:
-//                signIn();
-//                break;
-//            // ...
-//        }
-//    }
-
 }
