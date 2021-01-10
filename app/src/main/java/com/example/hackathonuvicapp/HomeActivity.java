@@ -17,7 +17,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.homepage);
 
         configureScheduleButton();
-        logoutConfiguration();
+        configureMapButton();
+        configureLogoutButton();
     }
 
     private void configureScheduleButton(){
@@ -29,8 +30,17 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+    private void configureMapButton(){
+        Button homeButton = (Button) findViewById(R.id.btnMap);
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, MondayActivity.class));
+            }
+        });
+    }
 
-    public void logoutConfiguration () {
+    public void configureLogoutButton () {
         Button homeButton = findViewById(R.id.btnLogOut);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
