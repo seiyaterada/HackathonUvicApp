@@ -21,7 +21,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class ExploreMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     GoogleMap map;
-    GoogleMapOptions options = new GoogleMapOptions();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +39,7 @@ public class ExploreMapActivity extends FragmentActivity implements OnMapReadyCa
         LatLng Uvic = new LatLng(48.463427, -123.311385);
         map.addMarker(new MarkerOptions().position(Uvic).title("University of Victoria"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Uvic));
-
-        //options.mapType(GoogleMap.MAP_TYPE_SATELLITE)
-
-
+        map.setMinZoomPreference(15.0f);
+        map.setMaxZoomPreference(20.0f);
     }
 }

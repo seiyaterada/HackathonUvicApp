@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configureLoginButton(){
-        Button loginPageButton = (Button) findViewById(R.id.btnSignIn);
+        Button loginPageButton = findViewById(R.id.btnSignIn);
         loginPageButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void configureExploreMapButton(){
-        Button homeButton = (Button) findViewById(R.id.btnExploreMap);
+        Button homeButton = findViewById(R.id.btnExploreMap);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void configureSignupButton(){
-        Button loginPageButton = (Button) findViewById(R.id.btnGoToSignup);
+        Button loginPageButton = findViewById(R.id.btnGoToSignup);
         loginPageButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
