@@ -50,13 +50,41 @@
 
     <Button
         android:id="@+id/btnNew"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="159dp"
+        android:layout_height="53dp"
         android:backgroundTint="@color/uvic_blue"
         android:text="Add Courses  +"
         android:textColor="#FFFFFFFF"
 
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="105dp" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="217dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="80dp"
+        android:layout_height="22dp"
+        android:text="Course 1"
+        android:textSize="20sp"
+        android:textColor="#FF000000"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="278dp"
+        android:layout_height="40dp"
+        android:hint="eg Astronomy 101"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="137dp"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
