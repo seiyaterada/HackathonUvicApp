@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,8 +46,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
         @SuppressLint("WrongViewCast")
         private void addClass() {
-            ImageButton addClassButton;
-            addClassButton = (ImageButton) findViewById(R.id.btnNew);
+            Button addClassButton;
+            addClassButton = (Button) findViewById(R.id.btnNew);
             addClassButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
