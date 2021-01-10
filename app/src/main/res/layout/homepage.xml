@@ -79,7 +79,7 @@
         android:layout_height="65dp"
         android:layout_marginTop="332dp"
         android:backgroundTint="@color/uvic_blue"
-        android:text="Registration"
+        android:text="Add Courses"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
