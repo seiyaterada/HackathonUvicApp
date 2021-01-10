@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.loginPage);
+        setContentView(R.layout.loginpage);
 //        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
 //                .requestEmail()
 //                .build();
@@ -41,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart()
     {
         super.onStart();
-        Toast.makeText(getApplicationContext(),"Now onStart() calls", Toast.LENGTH_LONG).show(); //onStart Called
 //        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 //        updateUI(account);
     }
