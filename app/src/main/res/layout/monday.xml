@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScheduleActivity">
+    tools:context=".MondayActivity">
 
     <ImageButton
-        android:id="@+id/btnmontue"
+        android:id="@+id/btnMonTue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
@@ -32,13 +32,13 @@
         android:singleLine="true"
         android:text="Monday"
         android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnmontue"
+        app:layout_constraintEnd_toStartOf="@+id/btnMonTue"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnmonfri"
+        app:layout_constraintStart_toEndOf="@+id/btnMonFri"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btnmonfri"
+        android:id="@+id/btnMonFri"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
