@@ -28,7 +28,7 @@ import androidx.appcompat.app.AppCompatActivity;
             prevButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(MondayActivity.this, LoginActivity.class));
+                    startActivity(new Intent(MondayActivity.this, FridayActivity.class));
                 }
 
             });
