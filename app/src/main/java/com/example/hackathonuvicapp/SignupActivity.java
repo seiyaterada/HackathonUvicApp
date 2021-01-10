@@ -1,59 +1,83 @@
 package com.example.hackathonuvicapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SignupActivity extends AppCompatActivity {
 
-    EditText email, password, repassword;
+    EditText mEmail, mPassword, mRepassword;
     Button signup;
-    DBHelper DB;
+    FirebaseAuth fAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signuppage);
 
-        email = (EditText) findViewById(R.id.editTextSigninEmail);
-        password = (EditText) findViewById(R.id.editTextSigninPassword);
-        repassword = (EditText) findViewById(R.id.editTextSignupPasswordAgain);
-        signup = (Button) findViewById(R.id.btnSignup);
-        DB = new DBHelper(this);
+        mEmail = findViewById(R.id.editTextSigninEmail);
+        mPassword = findViewById(R.id.editTextSigninPassword);
+        mRepassword = findViewById(R.id.editTextSignupPasswordAgain);
+        signup = findViewById(R.id.btnSignup);
+
+        fAuth = FirebaseAuth.getInstance();
+
+        if (fAuth.getCurrentUser() != null) {
+            startActivity(new Intent(SignupActivity.this, HomeActivity.class));
+            finish();
+        }
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                String user = email.getText().toString();
-                String pass = password.getText().toString();
-                String repass = repassword.getText().toString();
+            public void onClick(View v) {
+                String email = mEmail.getText().toString().trim();
+                String password = mPassword.getText().toString().trim();
+                String repassword = mRepassword.getText().toString().trim();
 
-                if(user.equals("")||pass.equals("")||repass.equals(""))
-                    Toast.makeText(SignupActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-                else{
-                    if(pass.equals(repass)){
-                        Boolean checkuser = DB.checkusername(user);
-                        if(checkuser==false){
-                            Boolean insert = DB.insertData(user, pass);
-                            if(insert==true){
-                                Toast.makeText(SignupActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                                startActivity(intent);
-                            }else{
-                                Toast.makeText(SignupActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
-                            }
+                if (TextUtils.isEmpty(email)) {
+                    mEmail.setError("Email is Required");
+                    return;
+                }
+                if (TextUtils.isEmpty(password)) {
+                    mPassword.setError("Password is Required");
+                    return;
+                }
+                if (password.length() < 6) {
+                    mPassword.setError("Must be greater than 6 characters");
+                    return;
+                }
+                if (!TextUtils.equals(password, repassword)) {
+                    mRepassword.setError("Password Must Match");
+                    return;
+                }
+                //Register user into FireBase
+                fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(SignupActivity.this, "User Created", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(SignupActivity.this, HomeActivity.class));
+                        } else {
+                            Toast.makeText(SignupActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
-                        else{
-                            Toast.makeText(SignupActivity.this, "User already exists! please sign in", Toast.LENGTH_SHORT).show();
-                        }
-                    }else{
-                        Toast.makeText(SignupActivity.this, "Passwords not matching", Toast.LENGTH_SHORT).show();
                     }
-                } }
+                });
+            }
         });
     }
 }
+
+
+

@@ -1,9 +1,11 @@
 package com.example.hackathonuvicapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,89 +14,65 @@ import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText email, password;
+    EditText mEmail, mPassword;
     Button btnLogin;
-    DBHelper DB;
+    FirebaseAuth fAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
 
-        email = (EditText) findViewById(R.id.editTextSigninEmail);
-        password = (EditText) findViewById(R.id.editTextSigninPassword);
-        btnLogin = (Button) findViewById(R.id.btnLogin);
-        DB = new DBHelper(this);
+        mEmail = findViewById(R.id.editTextSigninEmail);
+        mPassword = findViewById(R.id.editTextSigninPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+
+        fAuth = FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String email = mEmail.getText().toString().trim();
+                String password = mPassword.getText().toString().trim();
 
-                String user = email.getText().toString();
-                String pass = password.getText().toString();
-
-                if(user.equals("")||pass.equals(""))
-                    Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-                else{
-                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
-                    if(checkuserpass==true){
-                        Toast.makeText(LoginActivity.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
-                        Intent intent  = new Intent(getApplicationContext(), HomeActivity.class);
-                        startActivity(intent);
-                    }else{
-                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
-                    }
+                if (TextUtils.isEmpty(email)) {
+                    mEmail.setError("Email is Required");
+                    return;
                 }
+                if (TextUtils.isEmpty(password)) {
+                    mPassword.setError("Password is Required");
+                    return;
+                }
+                if (password.length() < 6) {
+                    mPassword.setError("Must be greater than 6 characters");
+                    return;
+                }
+
+                //Authenticate User
+                fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(LoginActivity.this, "Log in Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        }
+                        else {
+                            Toast.makeText(LoginActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
+
     }
-//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//                .requestEmail()
-//                .build();
-//        GoogleSignInClient = GoogleSignIn.getClient(this, gso);
-//
-//        findViewById(R.id.sign_in_button).setOnClickListener(this)
-    }
-
-//    public void updateUI(FirebaseUser account){
-//
-//        if(account != null){
-//            Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
-//            startActivity(new Intent(this,AnotherActivity.class));
-//
-//        }else {
-//            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
-//        }
-//
-//    }
-
-//    @Override
-//    protected void onStart()
-//    {
-//        super.onStart();
-//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-//        updateUI(account);
-
-
-
-
-    //     Google sign in stuff below, not very relevant right now
-
-//    private void signIn() {
-//        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-//        startActivityForResult(signInIntent, RC_SIGN_IN);
-//    }
-//
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.sign_in_button:
-//                signIn();
-//                break;
-//        }
-//    }
+}
 
 
 

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class HomeActivity extends AppCompatActivity {
 
     @Override
@@ -14,17 +16,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
 
-        configureLogoutButton();
+
     }
 
-    private void configureLogoutButton() {
-        Button loginPageButton = (Button) findViewById(R.id.btnLogOut);
-        loginPageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, MainActivity.class));
-            }
-
-        });
+    public void logout (View view) {
+        FirebaseAuth.getInstance().signOut(); //logout
+        startActivity(new Intent(HomeActivity.this, MainActivity.class));
+        finish();
     }
 }
