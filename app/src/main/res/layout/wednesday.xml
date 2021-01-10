@@ -6,22 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MondayActivity">
 
-    <Button
-        android:id="@+id/btnNew2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="105dp"
-
-        android:backgroundTint="@color/uvic_blue"
-        android:text="Add Courses  +"
-        android:textColor="#FFFFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
-        android:id="@+id/btnTueWed"
+        android:id="@+id/btnWedThu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
@@ -44,15 +30,15 @@
         android:inputType="textPersonName"
         android:selectAllOnFocus="false"
         android:singleLine="true"
-        android:text="Tuesday"
+        android:text="Wednesday"
         android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnTueWed"
+        app:layout_constraintEnd_toStartOf="@+id/btnWedThu"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnTueMon"
+        app:layout_constraintStart_toEndOf="@+id/btnWedTues"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btnTueMon"
+        android:id="@+id/btnWedTues"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -61,5 +47,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/abc_vector_test" />
+
+    <Button
+        android:id="@+id/btnNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="105dp"
+
+        android:backgroundTint="@color/uvic_blue"
+        android:text="Add Courses  +"
+        android:textColor="#FFFFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
