@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.coverpage);
 
         configureLoginButton();
+        configureExploreMapButton();
         configureSignupButton();
     }
 
@@ -27,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
 
+        });
+    }
+    private void configureExploreMapButton(){
+        Button homeButton = (Button) findViewById(R.id.btnExploreMap);
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ExploreMapActivity.class));
+            }
         });
     }
     private void configureSignupButton(){
