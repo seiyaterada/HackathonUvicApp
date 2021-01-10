@@ -59,7 +59,7 @@
         android:fontFamily="sans-serif-medium"
         android:text="Need help?"
         android:textColor="@color/uvic_blue"
-        android:textSize="10sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
