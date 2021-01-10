@@ -16,12 +16,18 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
 
-
+        logoutConfiguration();
     }
 
-    public void logout (View view) {
-        FirebaseAuth.getInstance().signOut(); //logout
-        startActivity(new Intent(HomeActivity.this, MainActivity.class));
-        finish();
+    public void logoutConfiguration () {
+        Button logoutButton = findViewById(R.id.btnLogOut);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut(); //logout
+                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                finish();
+            }
+        });
     }
 }
