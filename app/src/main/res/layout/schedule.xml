@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    tools:context=".ScheduleActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnHelp"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="122dp"
         android:layout_height="40dp"
