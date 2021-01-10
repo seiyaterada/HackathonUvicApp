@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+
+    <Button
+        android:id="@+id/button_explore_map"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="270dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="200dp"
+        android:background="@color/teal_700"
+        android:freezesText="false"
+        android:text="Explore Map"
+        android:textColor="@color/uvic_blue"
+        app:backgroundTint="@color/white"
+        app:iconTint="#914040"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/uvic_blue"
+        app:strokeColor="@color/uvic_blue" />
+
+    <Button
+        android:id="@+id/button_sign_in"
+        android:layout_width="270dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="11dp"
+        android:background="#FFFFFF"
+        android:text="Sign in"
+        app:backgroundTint="@color/uvic_blue"
+        app:iconTint="#C61515"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_explore_map" />
+
+    <ImageView
+        android:id="@+id/uvic_logo"
+        android:layout_width="413dp"
+        android:layout_height="187dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/uvic_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_help"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="122dp"
+        android:layout_height="40dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Need help?"
+        android:textColor="@color/uvic_blue"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
