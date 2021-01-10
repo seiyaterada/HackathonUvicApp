@@ -39,7 +39,7 @@ public class ExploreMapActivity extends FragmentActivity implements OnMapReadyCa
         LatLng Uvic = new LatLng(48.463427, -123.311385);
         map.addMarker(new MarkerOptions().position(Uvic).title("University of Victoria"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Uvic));
-        map.setMinZoomPreference(15.0f);
-        map.setMaxZoomPreference(20.0f);
+        map.setMinZoomPreference(16f);
+        map.setMaxZoomPreference(19.0f);
     }
 }
